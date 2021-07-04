@@ -4,7 +4,7 @@ services:
   butovo_les:
     image: rudiwork/butovo_les:1
     volumes:
-      - butovo-les-public:/app/public
+      - butovo-les-public:/app/public/butovo_les
     working_dir: /app
     environment:
       PHP_OPCACHE_ENABLE: 1
