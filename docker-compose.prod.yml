@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+
+  butovo_les:
+    image: rudiwork/butovo_les:1
+    volumes:
+      - butovo-les-public:/app/public
+    working_dir: /app
+    environment:
+      PHP_OPCACHE_ENABLE: 1
+      PHP_OPCACHE_CLI_ENABLE: 1
+      APP_ENV: prod
+
+    user: www-data:www-data
+    networks:
+      - nginx-proxy
+      - butovo-les-internal
+
+networks:
+  butovo-les-internal:
+    internal: true
+  nginx-proxy:
+    external: true
+
+volumes:
+  butovo-les-public:
+    external: true
