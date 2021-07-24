@@ -10,6 +10,9 @@ services:
       PHP_OPCACHE_ENABLE: 1
       PHP_OPCACHE_CLI_ENABLE: 1
       APP_ENV: prod
+      TO_EMAIL: ${TO_EMAIL}
+      GOOGLE_RECAPTCHA_SITE_KEY: ${GOOGLE_RECAPTCHA_SITE_KEY}
+      GOOGLE_RECAPTCHA_SECRET: ${GOOGLE_RECAPTCHA_SECRET}
     user: www-data:www-data
     networks:
       - nginx-proxy
